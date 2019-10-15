@@ -1,0 +1,103 @@
+package utility;
+
+import java.util.Scanner;
+
+public class Util {
+	Scanner sc = new Scanner(System.in);
+
+	public static void dayOfWeek() {
+		Util Util = new Util();
+		System.out.println("Enter date");
+		int d = Util.sc.nextInt();
+		System.out.println("Enter month");
+		int m = Util.sc.nextInt();
+		System.out.println("Enter year");
+		int y = Util.sc.nextInt();
+
+		int y0 = y - (14 - m) / 12;
+		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+		int m0 = m + 12 * ((14 - m) / 12) - 2;
+		int d0 = (d + x + 31 * m0 / 12) % 7;
+		switch (d0) {
+		case 1:
+			System.out.println("Monday");
+			break;
+		case 2:
+			System.out.println("Tuesday");
+			break;
+		case 3:
+			System.out.println("Wednesday");
+			break;
+		case 4:
+			System.out.println("Thursday");
+			break;
+		case 5:
+			System.out.println("Friday");
+			break;
+		case 6:
+			System.out.println("Satarday");
+			break;
+		case 7:
+			System.out.println("Sunday");
+			break;
+		}
+
+	}
+
+	public static void celtofah() {
+		Util Util = new Util();
+		System.out.println("Enter Temperature in Celsius");
+		double cel = Util.sc.nextDouble();
+		double f;
+		f = (cel * 9 / 5) + 32;
+		System.out.println("Temperature in Celsius = " + cel);
+		System.out.println("Temperature in Fahrenheit = " + f);
+	}
+
+	public static void fahtocel() {
+		Util Util = new Util();
+		System.out.println("Enter Temperature in Fahrenheit");
+		double f = Util.sc.nextDouble();
+		double cel;
+		cel = (f - 32) * 5 / 9;
+		System.out.println("Temperature in Fahrenheit = " + f);
+		System.out.println("Temperature in Celsius = " + cel);
+	}
+
+	public static void temperaturConversion() {
+		Util Util = new Util();
+
+		System.out.println("Enter your choice :\n 1) Celsius to fahrenheit\n 2) Fahrenheit to Celsius");
+		int choice = Util.sc.nextInt();
+		switch (choice) {
+		case 1:
+			celtofah();
+			break;
+		case 2:
+			fahtocel();
+			break;
+		default:
+			System.out.println("Enter valid choice");
+		}
+	}
+
+	public static void monthlyPayment() {
+		Util Util = new Util();
+		System.out.println("Enter Number of years");
+		double Y = Util.sc.nextDouble();
+		System.out.println("Enter Loan amount");
+		double P = Util.sc.nextDouble();
+		System.out.println("Enter monthly interest rate");
+		double R = Util.sc.nextDouble();
+		double r = R / (12 * 100);
+		double n = 12 * Y;
+		double a = Math.pow((1 + r), (-n));
+		double payment = (P * r) / (1 - a);
+		System.out.println("Payment = " + payment);
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

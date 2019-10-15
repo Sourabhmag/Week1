@@ -1,0 +1,30 @@
+package com.BridgeLabz.LogicalPrograms;
+
+public class Maingame {
+	private char[][] board;
+	private char currentPlayer;
+
+	public Maingame() {
+		board = new char[3][3];
+		currentPlayer = 'x';
+		initializeBoard();
+	}
+
+	// Gives us access to currentPlayerMark
+	public char getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	// Set/Reset the board back to all empty values.
+	public void initializeBoard() {
+
+		// Loop through rows
+		for (int i = 0; i < 3; i++) {
+
+			// Loop through columns
+			for (int j = 0; j < 3; j++) {
+				board[i][j] = '-';
+			}
+		}
+	}
+}

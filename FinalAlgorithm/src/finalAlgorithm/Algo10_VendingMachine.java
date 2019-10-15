@@ -1,0 +1,120 @@
+package finalAlgorithm;
+import java.util.Scanner;
+public class Algo10_VendingMachine 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Enter amount");
+		Scanner sc = new Scanner(System.in);
+		int amount = sc.nextInt();
+		int count_1,count_2,count_5,count_10,count_50,count_100,count_500,count_1000;
+		count_1=count_2=count_5=count_10=count_50=count_100=count_500=count_1000=0;
+		System.out.println("Notes avaliable = 1, 2, 5, 10, 50, 100, 500 and 1000");
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 1000 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-1000;
+				count_1000++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 500 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-500;
+				count_500++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 100 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-100;
+				count_100++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 50 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-50;
+				count_50++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 10 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-10;
+				count_10++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 5 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-5;
+				count_5++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 2 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-2;
+				count_2++;
+			}
+		}
+		for(int i=0;i<1000;i++)
+		{
+			if(amount - 1 <0)
+			{
+				break;
+			}
+			else
+			{
+				amount = amount-1;
+				count_1++;
+			}
+		}
+		System.out.println(count_1000+" Notes of Rs.1000");
+		System.out.println(count_500+" Notes of Rs.500");
+		System.out.println(count_100+" Notes of Rs.100");
+		System.out.println(count_50+" Notes of Rs.50");
+		System.out.println(count_10+" Notes of Rs.10");
+		System.out.println(count_5+" Notes of Rs.5");
+		System.out.println(count_2+" Notes of Rs.2");
+		System.out.println(count_1+" Notes of Rs.1");
+		int totalNotes = count_1+count_2+count_5+count_10+count_50+count_100+count_500+count_1000;
+		System.out.println("Tota notes returned = "+totalNotes);
+	}
+}

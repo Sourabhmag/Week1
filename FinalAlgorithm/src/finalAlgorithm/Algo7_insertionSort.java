@@ -1,0 +1,32 @@
+package finalAlgorithm;
+import java.util.*;
+public class Algo7_insertionSort 
+{
+	public static String []insertionSort(String []arr)
+    {
+        int size = arr.length;
+        
+        return arr;
+    }
+    public static void display(String []arr)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of Strings");
+        int size=sc.nextInt();
+        String []arr = new String[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextLine();
+        }
+        arr = insertionSort(arr);
+        display(arr);
+    }
+    
+}
